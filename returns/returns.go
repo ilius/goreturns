@@ -32,6 +32,9 @@ type Options struct {
 	AllErrors bool // Report all errors (not just the first 10 on different lines)
 
 	RemoveBareReturns bool // Remove bare returns
+
+	// list of import path namespaces to be grouped with each other
+	GroupImports []string
 }
 
 // Process formats and adjusts returns for the provided file in a

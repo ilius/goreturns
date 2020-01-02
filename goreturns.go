@@ -46,6 +46,14 @@ func init() {
 		"",
 		"put imports beginning with this string after 3rd-party packages (see goimports)",
 	)
+	groupImportsPtr := flag.String(
+		"group-imports",
+		"",
+		`-group-imports "github.com/user123 github.com/user456"`,
+	)
+	if groupImportsPtr != nil {
+		options.GroupImports = strings.Split(*groupImportsPtr, " ")
+	}
 }
 
 func report(err error) {
